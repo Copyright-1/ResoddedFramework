@@ -671,8 +671,8 @@ void LawnApp::DoBackToMain()
 
 void LawnApp::DoConfirmBackToMain()
 {
-	LawnDialog *aDialog = (LawnDialog *)DoDialog(Dialogs::DIALOG_CONFIRM_BACK_TO_MAIN, true, "[LEAVE_GAME_HEADER]",
-												 "[LEAVE_GAME]", "", Dialog::BUTTONS_YES_NO);
+	LawnDialog *aDialog = (LawnDialog *)DoDialog(Dialogs::DIALOG_CONFIRM_BACK_TO_MAIN, true, "Do you want to return\nto the main menu?\n\nYour game will be saved.",
+												 "Leave Game?", "", Dialog::BUTTONS_YES_NO);
 
 	aDialog->mLawnYesButton->mLabel = TodStringTranslate("[LEAVE_BUTTON]");
 	aDialog->mLawnNoButton->mLabel = TodStringTranslate("[DIALOG_BUTTON_CANCEL]");
@@ -879,8 +879,8 @@ void LawnApp::FinishCreateUserDialog(bool isYes)
 void LawnApp::DoConfirmDeleteUserDialog(const SexyString &theName)
 {
 	KillDialog(Dialogs::DIALOG_CONFIRMDELETEUSER);
-	DoDialog(Dialogs::DIALOG_CONFIRMDELETEUSER, true, "[ARE_YOU_SURE]",
-			 StrFormat(TodStringTranslate("[DELETE_USER_WARNING]").c_str(), theName.c_str()), "",
+	DoDialog(Dialogs::DIALOG_CONFIRMDELETEUSER, true, "Are You Sure?",
+			 StrFormat(TodStringTranslate("This will permanently remove '%s' from the player roster!").c_str(), theName.c_str()), "",
 			 Dialog::BUTTONS_YES_NO);
 }
 
