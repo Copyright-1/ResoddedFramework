@@ -37,13 +37,13 @@ LawnDialog::LawnDialog(LawnApp *theApp,
 
 	if (theButtonMode == 1)
 	{
-		mLawnYesButton = MakeButton(ID_YES, this, "[BUTTON_YES]");
-		mLawnNoButton = MakeButton(ID_NO, this, "[BUTTON_NO]");
+		mLawnYesButton = MakeButton(ID_YES, this, "Yes");
+		mLawnNoButton = MakeButton(ID_NO, this, "No");
 	}
 	else if (theButtonMode == 2)
 	{
-		mLawnYesButton = MakeButton(ID_OK, this, "[BUTTON_OK]");
-		mLawnNoButton = MakeButton(ID_CANCEL, this, "[BUTTON_CANCEL]");
+		mLawnYesButton = MakeButton(ID_OK, this, "Ok");
+		mLawnNoButton = MakeButton(ID_CANCEL, this, "Cancel");
 	}
 	else if (theButtonMode == 3)
 	{
