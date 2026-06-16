@@ -373,16 +373,14 @@ void AlmanacDialog::DrawPlants(Graphics *g)
 	PlantDefinition &aPlantDef = GetPlantDefinition(mSelectedSeed);
 	SexyString aName = Plant::GetNameString(mSelectedSeed, SEED_NONE);
 
-	SexyString aHeaderName = StrFormat("[%s_DESCRIPTION_HEADER]", aPlantDef.mPlantName);
 	SexyString aDescriptionName = StrFormat("[%s_DESCRIPTION]", aPlantDef.mPlantName);
 	TodDrawString(g, aName, 617, 288, Sexy::FONT_DWARVENTODCRAFT18YELLOW, Color::White, DS_ALIGN_CENTER);
-	int aDistanceHeader = TodDrawStringWrappedHelper(g, TodStringTranslate(aHeaderName), Rect(485, 309, 258, ALMANAC_PLANT_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), DS_ALIGN_LEFT, true);
-	int aDescriptionHeight = TodDrawStringWrappedHelper(g, TodStringTranslate(aDescriptionName), Rect(485, 309 + aDistanceHeader, 258, ALMANAC_PLANT_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), DS_ALIGN_LEFT, false);
-	int aVisibleHeight = ALMANAC_PLANT_MAX_SPACE - aDistanceHeader;
+	int aDescriptionHeight = TodDrawStringWrappedHelper(g, TodStringTranslate(aDescriptionName), Rect(485, 309, 258, ALMANAC_PLANT_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), DS_ALIGN_LEFT, false);
+	int aVisibleHeight = ALMANAC_PLANT_MAX_SPACE;
 
 	// FIXME: Figure out a formula to properly move the text so the last line is at the buttom of the space.
 
-	if (aDescriptionHeight + aDistanceHeader < ALMANAC_PLANT_MAX_SPACE)
+	if (aDescriptionHeight < ALMANAC_PLANT_MAX_SPACE)
 	{
 		mDescriptionScrollbar->mDisabled = true;
 		mDescriptionScrollbar->mVisible = false;
@@ -402,11 +400,11 @@ void AlmanacDialog::DrawPlants(Graphics *g)
 		aMaxWidthOffset = 15;
 
 		anOffsetSlider = mDescriptionScrollbar->GetValue();
-		mDescriptionScrollbar->Resize(735, 310 + aDistanceHeader, 8, aVisibleHeight - 28);
+		mDescriptionScrollbar->Resize(735, 310, 8, aVisibleHeight - 28);
 
-		g->SetClipRect(484, 309 + aDistanceHeader, 258, ALMANAC_PLANT_MAX_SPACE - aDistanceHeader - 28); // Cost and Time offset
+		g->SetClipRect(484, 309, 258, ALMANAC_PLANT_MAX_SPACE - 28); // Cost and Time offset
 	}
-	TodDrawStringWrapped(g, aDescriptionName, Rect(485, 309 + aDistanceHeader - anOffsetSlider, 258 - aMaxWidthOffset, ALMANAC_PLANT_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), DS_ALIGN_LEFT);
+	TodDrawStringWrapped(g, aDescriptionName, Rect(485, 309 - anOffsetSlider, 258 - aMaxWidthOffset, ALMANAC_PLANT_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), DS_ALIGN_LEFT);
 	g->ClearClipRect();
 
 	if (mSelectedSeed != SeedType::SEED_IMITATER)
@@ -623,11 +621,10 @@ void AlmanacDialog::DrawZombies(Graphics *g)
 		}
 	}
 
-	int aDistanceHeader = TodDrawStringWrappedHelper(g, aHeaderName, Rect(484, 377, 258, ALMANAC_ZOMBIE_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), DS_ALIGN_LEFT, true);
-	int aDescriptionHeight = TodDrawStringWrappedHelper(g, aDescription, Rect(484, 377 + aDistanceHeader, 258, ALMANAC_ZOMBIE_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), aAlign, false);
-	int aVisibleHeight = ALMANAC_ZOMBIE_MAX_SPACE - aDistanceHeader;
+	int aDescriptionHeight = TodDrawStringWrappedHelper(g, aDescription, Rect(484, 377, 258, ALMANAC_ZOMBIE_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), aAlign, false);
+	int aVisibleHeight = ALMANAC_ZOMBIE_MAX_SPACE;
 
-	if (aDescriptionHeight + aDistanceHeader < ALMANAC_ZOMBIE_MAX_SPACE)
+	if (aDescriptionHeight < ALMANAC_ZOMBIE_MAX_SPACE)
 	{
 		mDescriptionScrollbar->mDisabled = true;
 		mDescriptionScrollbar->mVisible = false;
@@ -648,11 +645,11 @@ void AlmanacDialog::DrawZombies(Graphics *g)
 		aMaxWidthOffset = 15;
 
 		anOffsetSlider = mDescriptionScrollbar->GetValue();
-		mDescriptionScrollbar->Resize(735, 377 + aDistanceHeader, 8, aVisibleHeight);
-		g->SetClipRect(484, 377 + aDistanceHeader, 258, ALMANAC_ZOMBIE_MAX_SPACE - aDistanceHeader);
+		mDescriptionScrollbar->Resize(735, 377, 8, aVisibleHeight);
+		g->SetClipRect(484, 377, 258, ALMANAC_ZOMBIE_MAX_SPACE);
 	}
 
-	TodDrawStringWrapped(g, aDescription, Rect(484, 377 + aDistanceHeader - anOffsetSlider, 258 - aMaxWidthOffset, ALMANAC_ZOMBIE_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), aAlign);
+	TodDrawStringWrapped(g, aDescription, Rect(484, 377 - anOffsetSlider, 258 - aMaxWidthOffset, ALMANAC_ZOMBIE_MAX_SPACE), Sexy::FONT_BRIANNETOD12, Color(40, 50, 90), aAlign);
 	g->ClearClipRect();
 }
 
