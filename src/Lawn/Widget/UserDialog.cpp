@@ -19,7 +19,7 @@ UserDialog::UserDialog(LawnApp *theApp)
 	: LawnDialog(theApp,
 				 Dialogs::DIALOG_USERDIALOG,
 				 true,
-				 "[WHO_ARE_YOU]",
+				 "WHO ARE YOU?",
 				 "",
 				 "",
 				 Dialog::BUTTONS_OK_CANCEL)
@@ -31,8 +31,8 @@ UserDialog::UserDialog(LawnApp *theApp)
 	mUserList->mJustify = ListWidget::JUSTIFY_CENTER;
 	mUserList->mItemHeight = 24;
 
-	mRenameButton = MakeButton(UserDialog::UserDialog_RenameUser, this, "[RENAME_BUTTON]");
-	mDeleteButton = MakeButton(UserDialog::UserDialog_DeleteUser, this, "[DELETE_BUTTON]");
+	mRenameButton = MakeButton(UserDialog::UserDialog_RenameUser, this, "Rename");
+	mDeleteButton = MakeButton(UserDialog::UserDialog_DeleteUser, this, "Delete");
 
 	mListSlider = new Slider(IMAGE_ZOMBATAR_TOS_SLIDER, IMAGE_ZOMBATAR_TOS_SLIDER_THUMB, UserDialog::UserDialog_ListSlider, this);
 	mListSlider->mHorizontal = false;
@@ -58,7 +58,7 @@ UserDialog::UserDialog(LawnApp *theApp)
 		mUserList->AddLine(anItr->second.mName, false);
 		mNumUsers++;
 	}
-	mUserList->AddLine(TodStringTranslate("[CREATE_NEW_USER]"), false);
+	mUserList->AddLine(TodStringTranslate("(Create a New User)"), false);
 
 	if (mNumUsers >= 8)
 	{
