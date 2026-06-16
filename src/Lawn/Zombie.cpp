@@ -7114,15 +7114,6 @@ void Zombie::StartMindControlled()
 	mMindControlled = true;
 	mLastPortalX = -1;
 
-	if (mZombieType == ZombieType::ZOMBIE_DANCER)
-	{
-		mApp->mAchievements->GiveAchievement(AchievementID::ACHIEVEMENT_DISCO_IS_UNDEAD);
-
-		for (int i = 0; i < NUM_BACKUP_DANCERS; i++)
-		{
-			mFollowerZombieID[i] = ZombieID::ZOMBIEID_NULL;
-		}
-	}
 	else if (mZombieType == ZombieType::ZOMBIE_BACKUP_DANCER)
 	{
 		Zombie *aLeader = mBoard->ZombieTryToGet(mRelatedZombieID);
