@@ -1,6 +1,6 @@
 # ResoddedFramework
 ResoddedFramework is an open-source modding base for the game Plants vs. Zombies.  <br>  <br> 
-It was based on version 0.9.9.1029 however features from future versions such as GOTY (Steam) have been backported.
+It was based on version 0.9.9.1029 however features from future versions such as GOTY (EA Store) have been backported.
 ## Join the Discord
 
 https://discord.gg/cK2ewgYQUe
