@@ -27,7 +27,7 @@ NewOptionsDialog::NewOptionsDialog(LawnApp *theApp, bool theFromGameSelector)
 	mFromGameSelector = theFromGameSelector;
 	SetColor(Dialog::COLOR_BUTTON_TEXT, Color(255, 255, 100));
 	mAlmanacButton = MakeButton(NewOptionsDialog::NewOptionsDialog_Almanac, this, "[VIEW_ALMANAC_BUTTON]");
-	mRestartButton = MakeButton(NewOptionsDialog::NewOptionsDialog_Restart, this, "[RESTART_LEVEL_BUTTON]");
+	mRestartButton = MakeButton(NewOptionsDialog::NewOptionsDialog_Restart, this, "Restart Button");
 	mBackToMainButton = MakeButton(NewOptionsDialog::NewOptionsDialog_MainMenu, this, "[MAIN_MENU_BUTTON]");
 	mSettingsButton = MakeNewButton(NewOptionsDialog::NewOptionsDialog_Settings, this, "[SETTINGS_BUTTON]", Sexy::FONT_DWARVENTODCRAFT18GREENINSET, nullptr, nullptr, nullptr);
 	mSettingsButton->mHiliteFont = Sexy::FONT_DWARVENTODCRAFT18BRIGHTGREENINSET;
@@ -317,7 +317,7 @@ void NewOptionsDialog::ButtonDepress(int theId)
 
 			LawnDialog *aDialog = (LawnDialog *)mApp->DoDialog(
 				Dialogs::DIALOG_CONFIRM_RESTART, true, aDialogTitle, aDialogMessage, "", Dialog::BUTTONS_YES_NO);
-			aDialog->mLawnYesButton->mLabel = TodStringTranslate("[RESTART_LABEL]");
+			aDialog->mLawnYesButton->mLabel = TodStringTranslate("RESTART");
 			aDialog->mLawnNoButton->mLabel = TodStringTranslate("[DIALOG_BUTTON_CANCEL]");
 
 			if (aDialog->WaitForResult(true) == Dialog::ID_YES)
