@@ -7114,7 +7114,7 @@ void Zombie::StartMindControlled()
 	mMindControlled = true;
 	mLastPortalX = -1;
 
-	else if (mZombieType == ZombieType::ZOMBIE_BACKUP_DANCER)
+	if (mZombieType == ZombieType::ZOMBIE_BACKUP_DANCER)
 	{
 		Zombie *aLeader = mBoard->ZombieTryToGet(mRelatedZombieID);
 		if (aLeader)
