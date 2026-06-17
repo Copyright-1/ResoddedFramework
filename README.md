@@ -7,40 +7,36 @@ https://discord.gg/cK2ewgYQUe
 
 # How To Use
 
-## What do you need?
-1. Copy of Plants vs. Zombies Game of the Year Edition. Demo works aswell.
-2. CMake
-2. vcpkg
-4. An IDE that supports C++
-
-## Installation
-To use ResoddedFramework you require CMake.
-Note: This isn't a tutorial on how to use CMake, please learn how to use it with your IDE of choice.
-1. Open the root folder containing **CMakeLists.txt**
-2. Wait for the cache to build
+1. Download [CMake](https://cmake.org/download/), [Git](https://git-scm.com/install/windows), [vcpkg](https://learn.microsoft.com/vcpkg/get_started/get-started) and [Visual Studio 2026](https://visualstudio.microsoft.com/downloads/) (or [other version](https://gist.github.com/Chenx221/6f4ed72cd785d80edb0bc50c9921daf7), 2019 work) or [Clang](https://releases.llvm.org/download.html) 
+2. `git clone repo*` (*url to my fork or original)
 3. Compile
-4. Start modding
+    - **[For VS.](https://youtu.be/A3-GchLlZAo)**
+    - **For clang:**
+```ps
+cd ResoddedFramework
+cmake --preset windows-x64-debug-clang
+cmake --build --preset windows-x64-debug-clang
+```
 
-## What do i do now?
 
-Go wild, the source code is organized. That means you can easily extend or even implement new content.
+## What I want to do in my fork:
 
-### THIS GUIDE WILL BE REWORKED AS PART OF 1.1 ALONG WITH IN-SOURCE CODE DOCUMENTATION
+- [ ] Change OpenAL to SDL_mixer.
+- [ ] Change libvorbis to stb_vorbis.
+- [ ] Change FreeType to stb_truetype.
+- [ ] Change Bass.dll to libopenmpt (for Linux, MacOS, BSD-like etc.).
+- [ ] Add support for other OSes (Linux, MacOS, BSD-like etc.)
 
-# Roadmap
+# Roadmap original repo
 
 ### High Priority
 - Reworked Rendering - 100%
-
 - JSON Settings, replacing the registry - 100%
 - ResourceGen V2 ([In Development](https://github.com/LawnProject/ResourceGen))
 - Documentation - 1%
-
-
 - Window Resizing - 100%
 - Advanced Options - 100%
 - UTF-8 Support - 100%
-
 - MP3/OGG/FLAC Lawn Music - 100%
 - Controller Support - 80% (Board Only)
 ### Low Priority
