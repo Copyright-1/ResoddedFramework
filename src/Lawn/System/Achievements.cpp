@@ -59,7 +59,7 @@ void Achievements::GiveAchievement(AchievementID theAchievement, bool aForceGive
 	mApp->PlaySample(Sexy::SOUND_ACHIEVEMENT);
 
 	mApp->mBoard->DisplayAdvice(
-		StrFormat("%s%s", TodStringTranslate(Achievements::GetAchievementDefinition(theAchievement).mName).c_str(), TodStringTranslate("[ACHIEVEMENT_ACHIEVED]").c_str()),
+		StrFormat("%s Achievement!, TodStringTranslate(Achievements::GetAchievementDefinition(theAchievement).mName).c_str()),
 		MessageStyle::MESSAGE_STYLE_ACHIEVEMENT, AdviceType::ADVICE_NONE
 	);
 }
