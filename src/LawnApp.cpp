@@ -671,8 +671,8 @@ void LawnApp::DoBackToMain()
 
 void LawnApp::DoConfirmBackToMain()
 {
-	LawnDialog *aDialog = (LawnDialog *)DoDialog(Dialogs::DIALOG_CONFIRM_BACK_TO_MAIN, true, "Do you want to return\nto the main menu?\n\nYour game will be saved.",
-												 "Leave Game?", "", Dialog::BUTTONS_YES_NO);
+	LawnDialog *aDialog = (LawnDialog *)DoDialog(Dialogs::DIALOG_CONFIRM_BACK_TO_MAIN, true, "Leave Game?",
+												 "Do you want to return\nto the main menu?\n\nYour game will be saved.", "", Dialog::BUTTONS_YES_NO);
 
 	aDialog->mLawnYesButton->mLabel = TodStringTranslate("[LEAVE_BUTTON]");
 	aDialog->mLawnNoButton->mLabel = TodStringTranslate("[DIALOG_BUTTON_CANCEL]");
