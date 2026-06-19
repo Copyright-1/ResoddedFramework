@@ -20,7 +20,7 @@ ContinueDialog::ContinueDialog(LawnApp *theApp)
 
 	if (theApp->IsAdventureMode())
 	{
-		mDialogLines = TodStringTranslate("[CONTINUE_GAME_OR_RESTART]");
+		mDialogLines = TodStringTranslate("Do you want to continue your current game or restart the level?");
 		mContinueButton =
 			MakeButton(ContinueDialog::ContinueDialog_Continue, this, "[CONTINUE_BUTTON]");
 		mNewGameButton =
