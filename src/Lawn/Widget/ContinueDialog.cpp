@@ -12,7 +12,7 @@ ContinueDialog::ContinueDialog(LawnApp *theApp)
 	: LawnDialog(theApp,
 				 Dialogs::DIALOG_CONTINUE,
 				 true, 
-				 "[CONTINUE_GAME_HEADER]",
+				 "CONTINUE GAME?",
 				 "",
 				 "[DIALOG_BUTTON_CANCEL]",
 				 Dialog::BUTTONS_FOOTER)
